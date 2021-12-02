@@ -2,6 +2,10 @@
   "name": "@makakwastaken/react-native-double-tap",
   "version": "0.0.1",
   "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "description": "A react-native wrapper component which supports both double tap and single tap event detection",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
