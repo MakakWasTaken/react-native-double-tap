@@ -1,12 +1,22 @@
-# react-native-double-tap
+# makakwastaken/react-native-double-tap
+
+## Credit
+
+Forked from [awshawka/react-native-double-tap](https://github.com/awshawka/react-native-double-tap)
 
 A wrapper component for React Native which supports both double and single tap. Works on both Android and iOS.
 
 ## Installation
 
-- `npm install --save react-native-double-tap`
+- `npm install --save makakwastaken/react-native-double-tap`
+
+or
+
+- `yarn add makakwastaken/react-native-double-tap`
 
 ## Usage
+
+### Class
 
 ```js
 export default class App extends React.Component {
@@ -15,18 +25,40 @@ export default class App extends React.Component {
       <View>
         <DoubleClick
           singleTap={() => {
-            console.log("single tap");
+            console.log('single tap')
           }}
           doubleTap={() => {
-            console.log("double tap");
+            console.log('double tap')
           }}
           delay={200}
         >
           <Button title="Single or Double Tap" />
         </DoubleClick>
       </View>
-    );
+    )
   }
+}
+```
+
+### Functional
+
+```js
+const App: React.FC = () => {
+  return (
+    <View>
+      <DoubleClick
+        singleTap={() => {
+          console.log('single tap')
+        }}
+        doubleTap={() => {
+          console.log('double tap')
+        }}
+        delay={200}
+      >
+        <Button title="Single or Double Tap" />
+      </DoubleClick>
+    </View>
+  )
 }
 ```
 

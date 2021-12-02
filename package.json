@@ -2,11 +2,21 @@
   "name": "react-native-double-tap",
   "version": "1.0.1",
   "description": "A react-native wrapper component which supports both double tap and single tap event detection",
-  "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --fix",
+    "*": "prettier --write --ignore-unknown"
+  },
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -b",
+    "clean": "rm -f -rf ./dist && rm -f tsconfig.tsbuildinfo",
+    "lint": "eslint --fix . && prettier --write . --ignore-unknown",
+    "lint:staged": "lint-staged",
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -23,10 +33,37 @@
     "click",
     "both"
   ],
+  "contributors": [
+    {
+      "name": "Markus Moltke",
+      "email": "markus@unknown-studios.com",
+      "url": "https://unknown-studios.com"
+    }
+  ],
   "author": "Waseef Shawkat<awshawka12@gmail.com> (http://awshawka.github.io)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/awshawka/react-native-double-click/issues"
+    "url": "https://github.com/makakwastaken/react-native-double-click/issues"
   },
-  "homepage": "https://github.com/awshawka/react-native-double-click#readme"
+  "homepage": "https://github.com/makakwastaken/react-native-double-click#readme",
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-native": "^0.66.3"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.37",
+    "@types/react-native": "^0.66.6",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "eslint": "^8.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.0",
+    "typescript": "^4.5.2"
+  }
 }
