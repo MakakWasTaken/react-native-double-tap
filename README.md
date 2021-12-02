@@ -1,4 +1,4 @@
-# makakwastaken/react-native-double-tap
+# @makakwastaken/react-native-double-tap
 
 ## Credit
 
@@ -8,11 +8,11 @@ A wrapper component for React Native which supports both double and single tap. 
 
 ## Installation
 
-- `npm install --save makakwastaken/react-native-double-tap`
+- `npm install --save @makakwastaken/react-native-double-tap`
 
 or
 
-- `yarn add makakwastaken/react-native-double-tap`
+- `yarn add @makakwastaken/react-native-double-tap`
 
 ## Usage
 
