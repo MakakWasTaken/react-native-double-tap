@@ -2,9 +2,9 @@ import React = require('react')
 import { TouchableOpacity } from 'react-native'
 
 export interface DoubleTapProps {
-  singleTap: () => void
-  doubleTap: () => void
-  delay: number
+  singleTap?: () => void
+  doubleTap?: () => void
+  delay?: number
 }
 
 export const DoubleTap: React.FC<DoubleTapProps> = (props) => {
@@ -14,7 +14,7 @@ export const DoubleTap: React.FC<DoubleTapProps> = (props) => {
   // the last time user tapped
   const [lastTime, setLastTime] = React.useState(new Date().getTime())
 
-  const timer = React.useRef<NodeJS.Timeout>()
+  const timer = React.useRef<number>()
 
   React.useEffect(() => {
     return () => {
