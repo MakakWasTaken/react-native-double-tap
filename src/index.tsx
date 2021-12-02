@@ -1,7 +1,7 @@
 import React = require('react')
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity, TouchableOpacityProps } from 'react-native'
 
-export interface DoubleTapProps {
+export interface DoubleTapProps extends TouchableOpacityProps {
   singleTap?: () => void
   doubleTap?: () => void
   delay?: number
@@ -58,5 +58,9 @@ export const DoubleTap: React.FC<DoubleTapProps> = (props) => {
     }
   }
 
-  return <TouchableOpacity onPress={onTap}>{props.children}</TouchableOpacity>
+  return (
+    <TouchableOpacity {...props} onPress={onTap}>
+      {props.children}
+    </TouchableOpacity>
+  )
 }
